@@ -60,11 +60,11 @@
         .hero { text-align: center; align-items: center; }
         .profile-img {
             width: 250px;
-            height: 250px; /* Harus sama dengan width agar bulat sempurna */
-            object-fit: cover; /* Memastikan foto tidak gepeng */
-            border-radius: 50%; /* Membuat foto menjadi bulat */
-            border: 4px solid #64ffda; /* Garis tepi berwarna toska */
-            padding: 5px; /* Jarak antara foto dan garis tepi */
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid #64ffda;
+            padding: 5px;
             filter: drop-shadow(0 10px 20px rgba(0,0,0,0.5));
             margin-bottom: 25px;
             transition: 0.5s ease;
@@ -74,12 +74,21 @@
             box-shadow: 0 0 20px rgba(100, 255, 218, 0.4);
         }
 
-        /* --- PROJECT CARDS --- */
+        /* --- BUTTONS WRAPPER --- */
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+
+        /* --- CARDS & SECTIONS --- */
         .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
         .card { background: #112240; padding: 25px; border-radius: 10px; transition: 0.4s; }
         .card:hover { transform: translateY(-10px); border: 1px solid #64ffda; }
 
-        .affiliate-section {
+        .highlight-section {
             background: rgba(100, 255, 218, 0.05);
             padding: 30px;
             border-radius: 10px;
@@ -87,20 +96,63 @@
             margin-top: 30px;
         }
 
-        /* --- TIKTOK BUTTONS --- */
-        .tiktok-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
+        /* --- TOOLS GRID WITH IMAGES --- */
+        .tools-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+        }
+
+        .tool-item {
+            background: #1d2d50;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #233554;
+            transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .tool-item img {
+            width: 55px; 
+            height: 55px; 
+            margin-bottom: 12px; 
+            object-fit: contain;
+            transition: 0.3s;
+        }
+
+        .tool-item:hover {
+            background: #112240;
+            border-color: #64ffda;
+            transform: translateY(-5px);
+        }
+
+        .tool-item:hover img {
+            transform: scale(1.15);
+        }
+
+        /* --- TIKTOK & ACTION BUTTONS --- */
         .tk-btn {
             background: #1d2d50;
             color: #64ffda;
             text-decoration: none;
-            padding: 12px;
+            padding: 12px 25px;
             text-align: center;
             border-radius: 5px;
             font-weight: bold;
             transition: 0.3s;
             border: 1px solid #233554;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
         }
         .tk-btn:hover { background: #64ffda; color: #0a192f; }
+
+        .tiktok-links { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 15px; margin-top: 20px; }
 
         /* --- CONTACT LOGOS --- */
         .contact-container {
@@ -137,57 +189,92 @@
 
     <section id="about" class="hero">
         <img src="Foto_Ahmad Rusli Saputra.jpg" alt="Foto Ahmad Rusli Saputra" class="profile-img">
-        
-        <p style="color: #64ffda;">Halo, nama saya</p>
+        <p style="color: #64ffda;">Halo, Perkenalkan Saya</p>
         <h2 style="border: none; padding: 0;">Ahmad Rusli Saputra</h2>
         <p style="max-width: 650px;">
-            Saya adalah seorang pengembang solusi digital dan <b>Content Strategist</b>. Berpengalaman mengelola proyek korporasi hingga membangun ekosistem <b>Affiliate Marketing</b> secara mandiri. Serta seorang <b>Teknisi Ketenagalistrikan</b> profesional dengan pengalaman dalam mengelola sistem distribusi daya, instalasi panel surya, dan pemeliharaan preventif perangkat listrik industri dengan memiliki Sertifikasi khusus.
+            Saya adalah seorang pengembang solusi digital dan <b>Content Strategist</b>. Berpengalaman mengelola proyek korporasi hingga membangun ekosistem <b>Affiliate Marketing</b> secara mandiri. Serta seorang <b>Teknisi Ketenagalistrikan</b> profesional dengan pengalaman industri dan Sertifikasi khusus.
         </p>
-        <a href="CV_ Ahmad Rusli Saputra.pdf" class="tk-btn" style="margin-top:20px; padding: 12px 40px;" download>My CV</a>
+        
+        <div class="cta-buttons">
+            <a href="CV_ Ahmad Rusli Saputra.pdf" class="tk-btn" download>
+                <i class="fas fa-file-pdf"></i> My CV
+            </a>
+            <a href="Sertifikat Uji Kompetensi.pdf" class="tk-btn" download>
+                <i class="fas fa-certificate"></i> Sertifikat Uji Kompetensi
+            </a>
+        </div>
     </section>
 
     <section id="projects">
-        <h2>Pengalaman Proyek sebagai Staff Social Media</h2>
+        <h2>Pengalaman Proyek</h2>
         <div class="project-grid">
             <div class="card">
                 <h3>Paragonation</h3>
-                <p>Mengelola integrasi sistem untuk kampanye kreatif skala besar guna meningkatkan kolaborasi, inovasi, dan dampak positif di seluruh Indonesia.</p>
+                <p>Mengelola integrasi sistem untuk kampanye kreatif skala besar guna meningkatkan kolaborasi dan inovasi di seluruh Indonesia.</p>
             </div>
             <div class="card">
                 <h3>Grab</h3>
-                <p>Bertanggung jawab dalam merancang dan mengeksekusi strategi periklanan digital untuk meningkatkan penetrasi layanan Grab (Food, Mart, & Transport).</p>
+                <p>Bertanggung jawab dalam merancang strategi periklanan digital untuk meningkatkan penetrasi layanan Grab Food, Mart, & Transport.</p>
             </div>
             <div class="card">
-                <h3>Cuanstream</h3>
-                <p>Sebuah edukasi atau wadah pelatihan (akselerator) yang dirancang khusus untuk para calon content creator dan streamer agar bisa menghasilkan pendapatan (monetisasi) secara maksimal.</p>
+                <h3>Cuanstream Academy</h3>
+                <p>Wadah pelatihan akselerator yang dirancang khusus untuk para content creator agar bisa menghasilkan pendapatan secara maksimal.</p>
             </div>
         </div>
 
-        <div class="affiliate-section">
+        <div class="highlight-section">
             <h3>TikTok Affiliate Marketing Portfolio</h3>
-            <p>Mengelola 4 akun strategis untuk pemasaran produk affiliate serta Hal Edukasi.</p>
+            <p>Mengelola 4 akun strategis untuk pemasaran produk affiliate serta konten Edukasi.</p>
             <div class="tiktok-links">
-                <a href="https://www.tiktok.com/@careskin81?_r=1&_t=ZS-933O8TpQ7Tk" target="_blank" class="tk-btn"><i class="fab fa-tiktok"></i> Akun 1</a>
-                <a href="https://www.tiktok.com/@dresscode747?_r=1&_t=ZS-933O6WhYXxY" target="_blank" class="tk-btn"><i class="fab fa-tiktok"></i> Akun 2</a>
-                <a href="https://www.tiktok.com/@niceportgame?_r=1&_t=ZS-933O9oYuvS4" target="_blank" class="tk-btn"><i class="fab fa-tiktok"></i> Akun 3</a>
-                <a href="https://www.tiktok.com/@informasimenarik2?is_from_webapp=1&sender_device=pc" target="_blank" class="tk-btn"><i class="fab fa-tiktok"></i> Akun 4</a>
+                <a href="https://www.tiktok.com/@careskin81" target="_blank" class="tk-btn"><i class="fab fa-tiktok"></i> Akun 1</a>
+                <a href="https://www.tiktok.com/@dresscode747" target="_blank" class="tk-btn"><i class="fab fa-tiktok"></i> Akun 2</a>
+                <a href="https://www.tiktok.com/@niceportgame" target="_blank" class="tk-btn"><i class="fab fa-tiktok"></i> Akun 3</a>
+                <a href="https://www.tiktok.com/@informasimenarik2" target="_blank" class="tk-btn"><i class="fab fa-tiktok"></i> Akun 4</a>
+            </div>
+        </div>
+
+        <div class="highlight-section" style="border-style: solid; border-width: 1px;">
+            <h3>Software & Tools Mastery</h3>
+            <p>Keahlian penggunaan perangkat lunak yang saya kuasai dalam dunia digital dan teknis.</p>
+            <div class="tools-grid">
+                
+                <div class="tool-item">
+                    <img src="Logo Canva.jpg" alt="Canva">
+                    <strong>Canva</strong>
+                    <p style="font-size: 0.75rem; opacity: 0.7;">Graphic Design</p>
+                </div>
+
+                <div class="tool-item">
+                    <img src="capcut.png" alt="CapCut">
+                    <strong>CapCut</strong>
+                    <p style="font-size: 0.75rem; opacity: 0.7;">Video Editing</p>
+                </div>
+
+                <div class="tool-item">
+                    <img src="Logo Goggle Sheet.jpg" alt="Google Sheets">
+                    <strong>Google Sheets</strong>
+                    <p style="font-size: 0.75rem; opacity: 0.7;">Data Management</p>
+                </div>
+
+                <div class="tool-item">
+                    <img src="CxProgammer.png" alt="Cx Programmer">
+                    <strong>Cx Programmer</strong>
+                    <p style="font-size: 0.75rem; opacity: 0.7;">PLC Programming</p>
+                </div>
+
             </div>
         </div>
     </section>
 
     <section id="contact" style="text-align: center; align-items: center;">
         <h2 style="border: none; padding: 0;">Hubungi Saya</h2>
-        <p style="color: #8892b0;">Klik icon di bawah untuk terhubung langsung</p>
-        
         <div class="contact-container">
-            <a href="https://www.instagram.com/ruslisaputra3?igsh=Z3lrcHppM2I5MGcx" target="_blank" class="contact-icon">
+            <a href="https://www.instagram.com/ruslisaputra3" target="_blank" class="contact-icon">
                 <i class="fab fa-instagram"></i>
             </a>
-
             <a href="https://wa.me/6285742815275" target="_blank" class="contact-icon">
                 <i class="fab fa-whatsapp"></i>
             </a>
-
             <a href="mailto:ahmadruslis.27@gmail.com" class="contact-icon">
                 <i class="fas fa-envelope"></i>
             </a>
@@ -195,10 +282,8 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Ahmad Rusli Saputra. This one's for you. </p>
+        <p>&copy; 2026 Ahmad Rusli Saputra. Built with Digital & Technical Expertise.</p>
     </footer>
 
 </body>
-
 </html>
-
